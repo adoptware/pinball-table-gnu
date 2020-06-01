@@ -1,5 +1,5 @@
-pinball-table-gnu (0.0.0-0) unstable; urgency=medium
+pinball-table-gnu (0.0.20200601-1) unstable; urgency=medium
 
   * Initial release (Closes: #961930)
 
- -- Philippe Coval <rzr@users.sf.net>  Mon, 23 Dec 2019 23:51:35 +0100
+ -- Philippe Coval <rzr@users.sf.net>  Mon, 01 Jun 2020 07:03:14 +0200
