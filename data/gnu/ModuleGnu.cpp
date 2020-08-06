@@ -64,7 +64,9 @@
  */
 class GnuBehavior : public Behavior {
 public:
-  GnuBehavior() : Behavior() {
+  GnuBehavior() : Behavior(),
+		  m_iMultiplier{}
+  {
     char name[32];
     //this->clear();
     Loader * loader = Loader::getInstance();
@@ -671,11 +673,13 @@ public:
         SendSignal( m_sigLockArrowBlink[i][1], 0, this->getParent(), NULL );
     }
     ElseOnSignal( PBL_SIG_BALL_ON ) {
-    Table * table = Table::getInstance();
-    for (int i = 0; i < MAX_BALL; i++)
-      {
-            BallGroup *ballgroup = table->getBall(i);
-            ballgroup->getShape3D(0)->setColor(1, 1, 1, 1);
+      Table * table = Table::getInstance();
+      for (int i = 0; i < MAX_BALL; i++) {
+        Shape3D * shape = NULL;
+        BallGroup * group = NULL;
+	if (table) group = table->getBall(i);
+	if (group) shape = group->getShape3D(0);
+	if (shape) shape->setColor(1, 1, 1, 1);
       }
     }
     ElseOnSignal( m_sigFreeballTarget) {
