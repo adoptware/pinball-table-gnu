@@ -1,11 +1,12 @@
-//#ident "$Id: ModuleGnu.cpp,v 1.8 2003/07/16 20:02:04 rzr Exp $"
+// -*- mode: C++; c-basic-offset: 2; indent-tabs-mode: nil -*-
+// #ident "$Id: ModuleGnu.cpp $"
+// SDPX-Licence-Identifier: GPL-2.0-or-later
 /***************************************************************************
-                          Score.cpp  -  description
-                             -------------------
     begin                : Fri Jan 26 2001
     copyright            : (C) 2001 by Henrik Enqvist
                            (C) 2013 Ben Asselstine
-    email                : henqvist@excite.com
+                           (C) 2020 Philippe Coval
+    URL:                 : https://github.com/rzr/pinball-table-gnu
 
 
     ========================= Modifications =========================
@@ -31,11 +32,11 @@
 /*
  *
  * 4 simultaneous missions.
- * 1. fill in GNU at the top.  It triggers the left and right lower shoot 
+ * 1. fill in GNU at the top.  It triggers the left and right lower shoot
  * objects that save the ball from dying.
  * 2. knock down the letters COPY LEFT.  this makes the 0, 1, 2, 3 light go up.
  * 3. knock down the letters GPL.  this makes the v1, v2, v3 light up.
- * 4. fill in FREE at the bottom.  when both balls are locked in the spinners, 
+ * 4. fill in FREE at the bottom.  when both balls are locked in the spinners,
  * it triggers multiball.
  * * when the 0, 1, 2, 3 lights are all lit up, the freedom target lights up.
  * upon hitting this target, a cylinder pops up in between the flippers.  the
@@ -44,7 +45,7 @@
  * when the v1, v2, v3 lights are all lit up, the free ball target lights up.
  * upon hitting this target, a free ball is awarded.
  *
- * it is possible to put a ball behind the top right flipper, and it goes 
+ * it is possible to put a ball behind the top right flipper, and it goes
  * back down to the plunger area.  doing this scores some points, but that's
  * all.
  *
@@ -267,7 +268,7 @@ public:
       */
   };
   ~GnuBehavior() {};
-  
+
   void onTick() {
     Table * table = Table::getInstance();
     Score * score = table->getScore();
@@ -322,7 +323,7 @@ public:
                   m_aLockArrow[0][1] = true;
                 }
               }
-            else if (m_aLocked[0] && m_aLocked[1]) 
+            else if (m_aLocked[0] && m_aLocked[1])
               {
                 for (int j = 0; j < 2; j++)
                   for (int i = 0; i < 6; i++) {
@@ -344,7 +345,7 @@ public:
         if (i > -1) {
           if (i == 0) SendSignal(loader->getSignal("game_start"), 0, this->getParent(), NULL);
           SendSignal( PBL_SIG_BALL_ON, 0, this->getParent(), NULL );
-          table->activateBall(i, 19.5f, 0.0f, 30.0f);   
+          table->activateBall(i, 19.5f, 0.0f, 30.0f);
           m_iCurrentBallSlot = i;
           m_bBallColourChanged = false;
         }
@@ -460,9 +461,9 @@ public:
       }
     }
   };
-  
+
   void StdOnCollision() {};
-  
+
   void StdOnSignal() {
     //EM_COUT((int)em_signal, 1);
     Table * table = Table::getInstance();
@@ -471,7 +472,7 @@ public:
 
     OnSignal( PBL_SIG_RESET_ALL ) {
       this->clear();
-    } 
+    }
     // ball dead
     ElseOnSignal( PBL_SIG_BALL_OFF ) {
       if (m_bFreeBall == false) {
@@ -483,7 +484,7 @@ public:
           }
           else
             table->setCurrentBall(table->getCurrentBall()+1);
-          m_bMultiBall = false; 
+          m_bMultiBall = false;
         }
       }
       else {
@@ -505,91 +506,91 @@ public:
 	m_aGnu[0] = true;
       }
       score->addScore(withMultiplier(50));
-    } 
+    }
     ElseOnSignal(m_sigGnu[1]) {
       if (!m_aGnu[1]) {
 	SendSignal(m_sigGnuOn[1], 0, this->getParent(), NULL);
 	m_aGnu[1] = true;
       }
       score->addScore(withMultiplier(50));
-    } 
+    }
     ElseOnSignal(m_sigGnu[2]) {
       if (!m_aGnu[2]) {
 	SendSignal(m_sigGnuOn[2], 0, this->getParent(), NULL);
 	m_aGnu[2] = true;
       }
       score->addScore(withMultiplier(50));
-    } 
+    }
     ElseOnSignal(m_sigFree[0]) {
       if (!m_aFree[0]) {
 	SendSignal(m_sigFreeOn[0], 0, this->getParent(), NULL);
 	m_aFree[0] = true;
       }
       score->addScore(withMultiplier(50));
-    } 
+    }
     ElseOnSignal(m_sigFree[1]) {
       if (!m_aFree[1]) {
 	SendSignal(m_sigFreeOn[1], 0, this->getParent(), NULL);
 	m_aFree[1] = true;
       }
       score->addScore(withMultiplier(50));
-    } 
+    }
     ElseOnSignal(m_sigFree[2]) {
       if (!m_aFree[2]) {
 	SendSignal(m_sigFreeOn[2], 0, this->getParent(), NULL);
 	m_aFree[2] = true;
       }
       score->addScore(withMultiplier(50));
-    } 
+    }
     ElseOnSignal(m_sigFree[3]) {
       if (!m_aFree[3]) {
 	SendSignal(m_sigFreeOn[3], 0, this->getParent(), NULL);
 	m_aFree[3] = true;
       }
       score->addScore(withMultiplier(50));
-    } 
+    }
     ElseOnSignal(m_sigKnockdown[0][0]) {
       if (!m_aKnockdown[0]) {
 	SendSignal(m_sigCopyleftOn[0], 0, this->getParent(), NULL);
 	m_aKnockdown[0] = true;
         score->addScore(withMultiplier(50));
       }
-    } 
+    }
     ElseOnSignal(m_sigKnockdown[1][0]) {
       if (!m_aKnockdown[1]) {
 	SendSignal(m_sigCopyleftOn[1], 0, this->getParent(), NULL);
 	m_aKnockdown[1] = true;
         score->addScore(withMultiplier(50));
       }
-    } 
+    }
     ElseOnSignal(m_sigKnockdown[2][0]) {
       if (!m_aKnockdown[2]) {
 	SendSignal(m_sigCopyleftOn[2], 0, this->getParent(), NULL);
 	m_aKnockdown[2] = true;
         score->addScore(withMultiplier(50));
       }
-    } 
+    }
     ElseOnSignal(m_sigKnockdown[3][0]) {
       if (!m_aKnockdown[3]) {
 	SendSignal(m_sigCopyleftOn[3], 0, this->getParent(), NULL);
 	m_aKnockdown[3] = true;
         score->addScore(withMultiplier(50));
       }
-    } 
+    }
     ElseOnSignal(m_sigKnockdown[4][0]) {
       if (!m_aKnockdown[4]) {
 	SendSignal(m_sigCopyleftOn[4], 0, this->getParent(), NULL);
 	m_aKnockdown[4] = true;
         score->addScore(withMultiplier(50));
       }
-    } 
+    }
     ElseOnSignal(m_sigKnockdown[5][0]) {
       if (!m_aKnockdown[5]) {
 	SendSignal(m_sigCopyleftOn[5], 0, this->getParent(), NULL);
 	m_aKnockdown[5] = true;
         score->addScore(withMultiplier(50));
       }
-    } 
+    }
     ElseOnSignal(m_sigKnockdown[6][0]) {
       if (!m_aKnockdown[6]) {
 	SendSignal(m_sigCopyleftOn[6], 0, this->getParent(), NULL);
@@ -725,7 +726,7 @@ public:
         score->addScore(withMultiplier(1000));
         unLockBalls();
         SendSignal(m_sigLockRelease, 0, this->getParent(), NULL);
-        m_bMultiBall = true; 
+        m_bMultiBall = true;
         SendSignal (m_sigGnuFloorOn, 0, this->getParent(), NULL);
         SendSignal (m_sigGnuFloorOff, 200, this->getParent(), NULL);
         for (int i = 0; i < 6; i++)
@@ -801,8 +802,8 @@ public:
       }
     }
     // COPYLEFT all
-    if (m_aKnockdown[0] && m_aKnockdown[1] && m_aKnockdown[2] && 
-        m_aKnockdown[3] && m_aKnockdown[4] && m_aKnockdown[5] && 
+    if (m_aKnockdown[0] && m_aKnockdown[1] && m_aKnockdown[2] &&
+        m_aKnockdown[3] && m_aKnockdown[4] && m_aKnockdown[5] &&
         m_aKnockdown[6] && m_aKnockdown[7]) {
       int i;
       SendSignal(m_sigCopyleftAll, 0, this->getParent(), NULL);
@@ -851,8 +852,8 @@ public:
 
           SendSignal (m_sigv123Announce[m_iGplVersionLevel], 0, this->getParent(), NULL);
           }
-        
-        if (m_iGplVersionLevel == 2 && m_bFreeBallTargetOn == false && 
+
+        if (m_iGplVersionLevel == 2 && m_bFreeBallTargetOn == false &&
             m_bFreeBall == false) {
           //to get to the last GplVersionLevel we have to shoot a target.
           //(freeball)
@@ -874,7 +875,7 @@ public:
 
     }
   }
-  
+
   void clear() {
     int i = 0, j = 0;
     for (i = 0; i < 3; i++)
@@ -907,7 +908,7 @@ public:
     m_bFreedomStopperOn = false;
     m_bRunIt = true;
   };
-  
+
   int getFirstDeadBall() {
     Table * table = Table::getInstance();
     for (int i = 0; i < MAX_BALL; i++)
@@ -1024,4 +1025,3 @@ private:
 extern "C"  void * new_object_fct(void) {
   return new GnuBehavior();
 }
-
