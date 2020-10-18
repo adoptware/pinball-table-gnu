@@ -1,3 +1,10 @@
+pinball-table-gnu (0.0.20200601-2) unstable; urgency=medium
+
+  * Team upload
+  * Source only upload
+
+ -- Xavier Guimard <yadd@debian.org>  Sun, 18 Oct 2020 08:57:22 +0200
+
 pinball-table-gnu (0.0.20200601-1) unstable; urgency=medium
 
   * Initial release (Closes: #961930)
