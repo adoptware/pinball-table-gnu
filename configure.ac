@@ -30,16 +30,16 @@ LTDL_INIT
 
 # Checks for libraries.
 PKG_CHECK_MODULES([SDL],
-	[sdl >= 1.2.0],
+	[sdl2 >= 2.0.0],
 	[],
-	[SDL_VERSION=1.2.0
-	 AM_PATH_SDL($SDL_VERSION, :,
+	[SDL_VERSION=2.0.0
+	 AM_PATH_SDL2($SDL_VERSION, :,
 		AC_MSG_ERROR([SDL version $SDL_VERSION not found! http://www.libsdl.org]))])
 
 CFLAGS="$CFLAGS $SDL_CFLAGS" 
 CPPFLAGS="$CPPFLAGS $SDL_CFLAGS" 
 #LIBS="$LIBS $SDL_LIBS"
-DEP_PKGS="$DEP_PKGS sdl >= 1.2.0"
+DEP_PKGS="$DEP_PKGS sdl2 >= 2.0.0"
 
 # Checks for header files.
 

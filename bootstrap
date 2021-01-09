@@ -4,8 +4,8 @@ set -e
 set -x
 
 if [ ! -r acinclude.m4 ] ; then
-    if [ -r '/usr/share/aclocal/sdl.m4' ]; then \
-	cat '/usr/share/aclocal/sdl.m4' >> acinclude.m4
+    if [ -r '/usr/share/aclocal/sdl2.m4' ]; then \
+	cat '/usr/share/aclocal/sdl2.m4' >> acinclude.m4
     else
 	curl -o acinclude.m4 \
 	     'https://hg.libsdl.org/SDL/raw-file/d4d66a1891fc/sdl.m4'
