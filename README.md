@@ -5,10 +5,15 @@ https://img.shields.io/github/forks/rzr/pinball-table-gnu.svg?style=social&label
 )](
 https://github.com/rzr/pinball-table-gnu
 )
-[![Fediverse](
-https://mastodon.social/@rzr/103765397111911239#pinball-table-gnu#
+[![Packaging status](
+https://repology.org/badge/tiny-repos/pinball-table-gnu.svg
 )](
+https://repology.org/project/pinball-table-gnu/versions
+)
+[![Fediverse](
 https://img.shields.io/mastodon/follow/279303?domain=https%3A%2F%2Fmastodon.social&style=social#
+)](
+https://mastodon.social/@rzr/103765397111911239#pinball-table-gnu#
 )
 
 ## INFOS ##
@@ -26,14 +31,14 @@ For more details check file:
 ## DEMO ##
 
 [![Video](
-https://peertube.mastodon.host/static/previews/35d08be9-0b05-4477-b6c5-d1cc95890b66.jpg
+https://files.mastodon.social/cache/preview_cards/images/023/049/736/original/ec1762c91f84251b.jpg
 )](
-https://peertube.mastodon.host/videos/embed/35d08be9-0b05-4477-b6c5-d1cc95890b66#pinball-table-gnu
+https://rzr.github.io/rzr-presentations/docs/pinball/#/11/:PinballTableGnu:
 )
 
 Watch video on PeerTube:
 
-- <https://peertube.mastodon.host/videos/watch/35d08be9-0b05-4477-b6c5-d1cc95890b66#pinball-table-gnu>
+- <https://diode.zone/videos/watch/ab13e09e-ffa2-41cc-bb7a-9f06d18e6d9c#pinball-table-gnu-pincab-2020-rzr>
 
 ## USAGE ##
 
@@ -59,7 +64,15 @@ docker-compose up --build
 
 ## RESOURCES ##
 
+- <https://repology.org/project/pinball-table-gnu>
+- <https://tracker.debian.org/pkg/pinball-table-gnu>
 - <https://pinball.sf.net>
 - <https://purl.org/rzr/pinball>
 - <https://github.com/rzr/pinball/issues/4>
 - <https://mastodon.social/@rzr/103448015175182101>
+- <https://rzr.github.io/rzr-presentations/docs/pinball/>
+- <https://purl.org/rzr>
+- <https://purl.org/rzr/presentations>
+- <https://mdco2.mini.debconf.org/talks/23-my-diy-pinball-on-debian/>
+- <https://peertube.debian.social/videos/watch/c23f0709-4099-4302-b877-f7d2562b2880#my-diy-pinball-on-debian>
+- <https://github.com/rzr/pinball-table-hurd/>
