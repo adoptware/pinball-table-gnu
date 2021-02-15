@@ -69,7 +69,7 @@ public:
 		  m_iMultiplier{}
   {
     char name[32];
-    //this->clear();
+    this->clear();
     Loader * loader = Loader::getInstance();
     m_sigBump = loader->getSignal("bump");
     int i = 0;
