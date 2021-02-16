@@ -38,7 +38,7 @@ automake \
 libtool-bin \
 docbook-utils \
 pinball-dev \
-libsdl1.2-dev \
+libsdl2-dev \
 # EOL
 
 rule/version:
