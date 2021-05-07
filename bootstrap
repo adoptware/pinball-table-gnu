@@ -17,6 +17,8 @@ aclocal --version
 autoheader --version 
 automake --version
 autoconf --version
+set
+pinball-config --version
 
 rm -rf libltdl
 
