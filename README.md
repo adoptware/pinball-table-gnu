@@ -15,6 +15,11 @@ https://img.shields.io/mastodon/follow/279303?domain=https%3A%2F%2Fmastodon.soci
 )](
 https://mastodon.social/@rzr/103765397111911239#pinball-table-gnu#
 )
+[![snap](
+https://snapcraft.io/pinball-table-gnu/badge.svg
+)](
+https://snapcraft.io/pinball-table-gnu
+)
 
 ## INFOS ##
 
@@ -27,6 +32,12 @@ It features magnets and bumpers.
 For more details check file:
 
 - [data/gnu/README](data/gnu/README)
+
+[![Get it from the Snap Store](
+https://snapcraft.io/static/images/badges/en/snap-store-black.svg
+)](
+https://snapcraft.io/pinball-table-gnu
+)
 
 ## DEMO ##
 
