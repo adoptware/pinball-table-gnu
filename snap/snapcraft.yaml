@@ -6,7 +6,7 @@ description: |
  The table is dedicated to GNU project.
  It features multiballs, magnets and bumpers.
 
-confinement: devmode
+confinement: strict
 grade: devel
 base: core20
 license: GPL-2.0+
