@@ -46,6 +46,8 @@ apps:
 layout:
   /usr/local:
     bind: $SNAP/usr/local
+  /etc/pinball:
+    bind: $SNAP/etc/pinball
   /usr/share/alsa:
     bind: $SNAP/usr/share/alsa
   /usr/share/X11:
