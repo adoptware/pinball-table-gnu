@@ -36,7 +36,7 @@ libltdl/
 AUTHORS
 ChangeLog
 INSTALL
-Makefile
+/Makefile
 NEWS
 README
 acinclude.m4
