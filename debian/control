@@ -1,5 +1,7 @@
 Source: pinball-table-gnu
-Maintainer: Philippe Coval <rzr@users.sf.net>
+Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+Uploaders:
+ Philippe Coval <rzr@users.sf.net>
 Section: games
 Priority: optional
 Build-Depends: debhelper-compat (= 13),
