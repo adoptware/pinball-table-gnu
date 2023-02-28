@@ -29,6 +29,7 @@ Description: GNU Pinball table for emilia pinball
 
 Package: pinball-table-gnu-data
 Architecture: all
+Multi-Arch: foreign
 Depends: ${misc:Depends}
 Description: GNU Pinball table data used by plugin
  Visual and sounds for Emilia's pinball's GNU table.
