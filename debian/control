@@ -9,7 +9,7 @@ Build-Depends: debhelper-compat (= 13),
                libltdl-dev,
                libsdl2-dev,
                pinball-dev
-Standards-Version: 4.5.0
+Standards-Version: 4.6.2
 Vcs-Browser: https://github.com/rzr/pinball-table-gnu/tree/debian/master
 Vcs-Git: https://github.com/rzr/pinball-table-gnu.git -b debian/master
 Homepage: https://github.com/rzr/pinball-table-gnu
