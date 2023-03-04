@@ -1,3 +1,20 @@
+pinball-table-gnu (0.0.20230219-1) unstable; urgency=medium
+
+  [ Jelmer Vernooĳ ]
+  * Use standard way of specifying Vcs-Git branch name.
+
+  [ Philippe Coval ]
+  * New upstream version:
+    + debian: Bump to current standards
+    + debian/watch: Look for tags
+    + debian: Depends on SDL2
+  * d/control: Update standards
+  * d/gbp.conf: Based on upstream tag
+  * d/control: Set Multi-Arch: foreign
+  * d/control: Set team maintenance
+
+ -- Philippe Coval <rzr@users.sf.net>  Sat, 04 Mar 2023 13:44:44 +0100
+
 pinball-table-gnu (0.0.20200601-2) unstable; urgency=medium
 
   * Team upload
