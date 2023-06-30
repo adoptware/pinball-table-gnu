@@ -1,5 +1,10 @@
 pinball-table-gnu (0.0.20230219-1) unstable; urgency=medium
 
+  [Sylvain Beucler]
+  * Team upload
+  * d/control: depend on SDL2-rewritten 'pinball' package
+    (Closes: #1038533)
+
   [ Jelmer Vernooĳ ]
   * Use standard way of specifying Vcs-Git branch name.
 
@@ -13,7 +18,7 @@ pinball-table-gnu (0.0.20230219-1) unstable; urgency=medium
   * d/control: Set Multi-Arch: foreign
   * d/control: Set team maintenance
 
- -- Philippe Coval <rzr@users.sf.net>  Sat, 04 Mar 2023 13:44:44 +0100
+ -- Sylvain Beucler <beuc@debian.org>  Fri, 30 Jun 2023 13:59:03 +0200
 
 pinball-table-gnu (0.0.20200601-2) unstable; urgency=medium
 

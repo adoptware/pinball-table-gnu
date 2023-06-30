@@ -10,7 +10,7 @@ Build-Depends: debhelper-compat (= 13),
                libtool,
                libltdl-dev,
                libsdl2-dev,
-               pinball-dev
+               pinball-dev (>= 0.3.20230219)
 Standards-Version: 4.6.2
 Vcs-Browser: https://github.com/rzr/pinball-table-gnu/tree/debian/master
 Vcs-Git: https://github.com/rzr/pinball-table-gnu.git -b debian/master
@@ -21,7 +21,7 @@ Package: pinball-table-gnu
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         pinball,
+         pinball (>= 0.3.20230219),
          pinball-table-gnu-data (= ${source:Version})
 Enhances: pinball
 Description: GNU Pinball table for emilia pinball
